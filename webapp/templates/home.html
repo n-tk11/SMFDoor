@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประตูหินเหล็กกระดอไฟลุก</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style1.css')}}">
+    <style>
+        .button {
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 40px 2px;
+            transition-duration: 0.4s;
+            border-radius: 20px;
+            }
+
+        .button1 {
+            background-color: rgba(255, 255, 255, 0);
+            color: rgb(255, 255, 255);
+            border: 2px solid #fafafafa;
+            cursor: pointer;
+        }
+
+        .button1:hover {
+            font-size: 20px;
+            background-color: #e00f0f;
+            border: 2px solid #565652;
+            color: rgb(0, 0, 0);
+            margin: 30px 2px;
+            padding: 18px 35px;
+            margin-top: -15px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .button2 {
+            background-color: rgba(255, 255, 255, 0);
+            color: rgb(255, 255, 255);
+            border: 2px solid #fafafafa;
+            cursor: pointer;
+        }
+
+        .button2:hover {
+            font-size: 20px;
+            background-color: #e00f0f;
+            border: 2px solid #565652;
+            color: rgb(0, 0, 0);
+            margin: 30px 2px;
+            padding: 18px 35px;
+            margin-top: -15px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .button3 {
+            background-color: rgb(49, 49, 49);
+            color: rgb(255, 255, 255);
+            border: 2px solid #545454fa;
+        }
+
+        .button4 {
+            background-color: rgb(49, 49, 49);
+            color: rgb(255, 255, 255);
+            border: 2px solid #545454fa;
+        }
+
+    </style>
+</head>
+<body style = "background-image: url('https://wallpapercave.com/uwp/uwp292236.gif'); background-repeat: no-repeat; background-size: cover;">
+    <center>
+        <h1><br></h1>
+        <h1><br></h1>
+        <h1><br></h1>
+        <h1 style="color: #ffffff;">กดที่หำด้านล่างเพื่อขอรับรหัสสำหรับปลดล็อคกระดอ</h1>
+        <!-- unlock อยู่ -->
+        {% if lmode == 1 %}
+        <a>
+            <button class="button button4"; >กดเพื่อขอรหัส</button>
+        </a>
+        <a href="{{url_for('home_locked')}}">
+            <button class="button button2"; >กดเพื่อสั่งล็อคประตูกระดอหินเหล็กควายธนู</button>
+        </a> 
+        <div class="bot2">
+            <img src="https://icon-library.com/images/unlock-icon-png/unlock-icon-png-3.jpg" width="80px";>
+            <h1 style="color: #ffffff;">&nbsp;&nbsp;สถานะ: ปลดล็อก</h1>
+        </div>
+        <!-- lock อยู่ -->
+        {% else %}
+        <a href="{{url_for('code')}}">
+            <button class="button button1"; >กดเพื่อขอรหัส</button>
+        </a>
+        <button class="button button3"; >กดเพื่อสั่งล็อคประตูกระดอหินเหล็กควายธนู</button>
+        <div class = "bot1">
+            <img src="https://findicons.com/files/icons/977/rrze/720/lock.png" width="80px";>
+            <h1 style="color: #ffffff;">สถานะ: ล็อก</h1>
+        </div>
+        {% endif %}
+    </center>
+</body>
+</html>

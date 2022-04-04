@@ -1,0 +1,53 @@
+.time {
+    text-shadow: -1px 0 rgb(0, 0, 0), 0 1px rgb(0, 0, 0), 1px 0 rgb(0, 0, 0), 0 -1px rgb(0, 0, 0);
+}
+
+.Success {
+    position: relative;
+    color: white;
+}
+
+.S {
+    font-size: 60px;
+    text-shadow: -1px 0 rgb(0, 0, 0), 0 1px rgb(0, 0, 0), 1px 0 rgb(0, 0, 0), 0 -1px rgb(0, 0, 0);
+    background-image: url('https://static.wikia.nocookie.net/ac36f5ce-0bbe-418b-8836-200a93df2f22');
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 90px;
+    padding-top: 200px;
+    margin-top: -10px;
+}
+.time {
+    margin-top: -1px;
+}
+
+.F {
+    text-shadow: -1px 0 rgb(0, 0, 0), 0 1px rgb(0, 0, 0), 1px 0 rgb(0, 0, 0), 0 -1px rgb(0, 0, 0);
+}
+
+.button {
+    margin-top: -10px;
+    background: linear-gradient(to bottom, #2e2e2e9c 0%, #ff99cccc 100%);
+}
+
+.button:hover {
+    margin-top: -15px;
+    background: linear-gradient(to bottom, #fd01019c 0%, #ff99cccc 100%);
+}
+
+.shoot {
+    margin-top: -10px;
+}
+
+.text {
+    font-size: 20px;
+    margin-top: -75px;
+}
+
+.exit {
+    margin-left: 10px;
+}
+
+.head {
+    margin-top: -80px;
+}
