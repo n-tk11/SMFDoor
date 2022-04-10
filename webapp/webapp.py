@@ -26,12 +26,14 @@ def randpass():
 
 @app.route("/")
 def home():
+    peri.unlock_door()
     peri.set_led_servo(NOTHING)
     return render_template('home.html',lmode=1)
 
 @app.route("/locked")
 def home_locked():
     peri.set_led_servo(NOTHING)
+    peri.lock_door() 
     return render_template('home.html',lmode=2)
 
 @app.route("/code")
@@ -78,6 +80,7 @@ def judge():
                 isCorrect = False
                 break
         if(isCorrect):
+            peri.unlock_door()
             return render_template('code.html',passw=passw,mode=2,rtime=rtime)
         else:
             isWrong = True

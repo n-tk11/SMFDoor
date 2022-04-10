@@ -5,6 +5,11 @@
 .Success {
     position: relative;
     color: white;
+    margin-top: 50px;
+}
+
+.Fail {
+    margin-top: 50px;
 }
 
 .S {
@@ -18,7 +23,7 @@
     margin-top: -10px;
 }
 .time {
-    margin-top: -1px;
+    margin-top: 30px;
 }
 
 .F {

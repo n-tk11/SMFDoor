@@ -9,6 +9,7 @@ Servo myservo;
 #define RQ_SW 1
 #define RQ_SET_LED_SERVO 2 
 #define RQ_LOCK 7
+#define RQ_UNLOCK 8
 
 
 #define NOTHING 3
@@ -66,6 +67,8 @@ usbMsgLen_t usbFunctionSetup(uint8_t data[8]){
     else if(rq->bRequest == RQ_SET_LED_SERVO){
       uint8_t mode = rq->wValue.bytes[0];
       if(mode == NOTHING){
+          ccount = 0;
+          lcd.clear();
           digitalWrite(PIN_PB2, LOW);
           digitalWrite(PIN_PB3, LOW);
           digitalWrite(PIN_PB4, LOW);
@@ -78,7 +81,6 @@ usbMsgLen_t usbFunctionSetup(uint8_t data[8]){
           lcd.print("CORRECT!!");
           delay(5000);
           lcd.clear();
-          myservo.write(0);
       }else if(mode == WAIT){
           digitalWrite(PIN_PB2, LOW);
           digitalWrite(PIN_PB3, HIGH);
@@ -100,6 +102,10 @@ usbMsgLen_t usbFunctionSetup(uint8_t data[8]){
       myservo.write(90);
       return 0;
     }
+    else if(rq->bRequest == RQ_UNLOCK){
+      myservo.write(0);
+      return 0;
+    }
     return 0;
 }
 
@@ -117,6 +123,7 @@ void setup() {
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0,0);
+  myservo.write(0);
   usbInit();
   usbDeviceDisconnect();
   delay(300);

@@ -3,6 +3,7 @@ import usb
 RQ_SW = 1
 RQ_SET_LED_SERVO = 2
 RQ_LOCK = 7
+RQ_UNLOCK = 8
 
 NOTHING = 3
 CORRECT = 4
@@ -81,6 +82,10 @@ class PeriBoard:
 
     ################################
     def lock_door(self):
-        self.mcu.usb_write(RQ_LOCK);
+        self.mcu.usb_write(RQ_LOCK)
+
+    ###############################
+    def unlock_door(self):
+        self.mcu.usb_write(RQ_UNLOCK)
 
 
